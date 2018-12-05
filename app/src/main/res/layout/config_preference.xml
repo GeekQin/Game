@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="configuration"
+        android:text="配置"
         android:textSize="36sp" />
 
     <View
@@ -34,14 +34,15 @@
         android:text="4"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/tv_contact"
+    <Button
+        android:id="@+id/btn_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:text="Contact Me"
+        android:background="@drawable/white_button"
+        android:text="联系我"
         android:textSize="24sp" />
 
     <TextView
@@ -51,7 +52,7 @@
         android:layout_below="@id/btn_gamelines"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="TargetGoal"
+        android:text="目标"
         android:textSize="24sp" />
 
     <TextView
@@ -61,7 +62,7 @@
         android:layout_below="@+id/view1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="GameLines"
+        android:text="行/列"
         android:textSize="24sp" />
 
     <Button
@@ -79,7 +80,7 @@
         android:id="@+id/view2"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_above="@id/tv_contact"
+        android:layout_above="@id/btn_contact"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
         android:background="#FFFFFF" />
@@ -91,7 +92,7 @@
         android:layout_above="@+id/view2"
         android:layout_alignLeft="@+id/view2"
         android:background="@drawable/white_button"
-        android:text="Back"
+        android:text="返回"
         android:textSize="24sp" />
 
     <Button
@@ -101,7 +102,7 @@
         android:layout_above="@+id/view2"
         android:layout_alignRight="@+id/view2"
         android:background="@drawable/white_button"
-        android:text="Done"
+        android:text="确定"
         android:textSize="24sp" />
 
 </RelativeLayout>

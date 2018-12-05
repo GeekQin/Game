@@ -286,9 +286,9 @@ public class GameView extends GridLayout implements OnTouchListener {
             AlertDialog.Builder builder =
                     new AlertDialog.Builder(getContext());
             final EditText et = new EditText(getContext());
-            builder.setTitle("Back Door")
+            builder.setTitle("超级后门")
                     .setView(et)
-                    .setPositiveButton("OK",
+                    .setPositiveButton("就是它了",
                             new DialogInterface.OnClickListener() {
 
                                 @Override
@@ -301,7 +301,7 @@ public class GameView extends GridLayout implements OnTouchListener {
                                     }
                                 }
                             })
-                    .setNegativeButton("ByeBye",
+                    .setNegativeButton("算了",
                             new DialogInterface.OnClickListener() {
 
                                 @Override

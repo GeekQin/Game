@@ -32,7 +32,11 @@ public class ConfigPreference extends Activity implements OnClickListener {
 
     private String[] mGameGoalList;
 
+    private String[] mBtnContactList;
+
     private AlertDialog.Builder mBuilder;
+
+    private Button mBtnContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +50,17 @@ public class ConfigPreference extends Activity implements OnClickListener {
         mBtnGoal = (Button) findViewById(R.id.btn_goal);
         mBtnBack = (Button) findViewById(R.id.btn_back);
         mBtnDone = (Button) findViewById(R.id.btn_done);
+        mBtnContact = (Button) findViewById(R.id.btn_contact);
         mBtnGameLines.setText("" + Config.mSp.getInt(Config.KEY_GAME_LINES, 4));
         mBtnGoal.setText("" + Config.mSp.getInt(Config.KEY_GAME_GOAL, 2048));
         mBtnGameLines.setOnClickListener(this);
         mBtnGoal.setOnClickListener(this);
         mBtnBack.setOnClickListener(this);
         mBtnDone.setOnClickListener(this);
+        mBtnContact.setOnClickListener(this);
         mGameLinesList = new String[]{"4", "5", "6"};
         mGameGoalList = new String[]{"1024", "2048", "4096"};
+        mBtnContactList = new String[]{"微信号：Aaron_Qin_"};
     }
 
     private void saveConfig() {
@@ -70,7 +77,7 @@ public class ConfigPreference extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_gamelines:
                 mBuilder = new AlertDialog.Builder(this);
-                mBuilder.setTitle("choose the lines of the game");
+                mBuilder.setTitle("选择游戏的行数");
                 mBuilder.setItems(mGameLinesList,
                         new DialogInterface.OnClickListener() {
 
@@ -83,7 +90,7 @@ public class ConfigPreference extends Activity implements OnClickListener {
                 break;
             case R.id.btn_goal:
                 mBuilder = new AlertDialog.Builder(this);
-                mBuilder.setTitle("choose the goal of the game");
+                mBuilder.setTitle("选择游戏的目标分数");
                 mBuilder.setItems(mGameGoalList,
                         new DialogInterface.OnClickListener() {
 
@@ -94,6 +101,7 @@ public class ConfigPreference extends Activity implements OnClickListener {
                         });
                 mBuilder.create().show();
                 break;
+
             case R.id.btn_back:
                 this.finish();
                 break;
@@ -101,6 +109,19 @@ public class ConfigPreference extends Activity implements OnClickListener {
                 saveConfig();
                 setResult(RESULT_OK);
                 this.finish();
+                break;
+            case R.id.btn_contact:
+                mBuilder = new AlertDialog.Builder(this);
+                mBuilder.setTitle("有疑问及建议添加：");
+                mBuilder.setItems(mBtnContactList,
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        });
+                mBuilder.create().show();
                 break;
             default:
                 break;

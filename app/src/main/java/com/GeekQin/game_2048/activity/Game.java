@@ -152,5 +152,12 @@ public class Game extends Activity implements View.OnClickListener {
         int score = Config.mSp.getInt(Config.KEY_HIGH_SCROE, 0);
         setScore(score, 1);
     }
+
+    /**
+     * 跳转到联系方式
+     */
+    public void ToContact(){
+
+    }
 }
 

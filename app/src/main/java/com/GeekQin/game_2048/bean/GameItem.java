@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.GeekQin.game_2048.config.Config;
-
 /**
  * Created by Administrator on 2018/11/22.
  */
@@ -44,8 +42,10 @@ public class GameItem extends FrameLayout {
             mTvNum.setTextSize(35);
         } else if (gameLines == 5) {
             mTvNum.setTextSize(25);
-        } else {
+        } else if(gameLines==6){
             mTvNum.setTextSize(20);
+        }else{
+            mTvNum.setTextSize(15);
         }
         TextPaint tp = mTvNum.getPaint();
         tp.setFakeBoldText(true);
